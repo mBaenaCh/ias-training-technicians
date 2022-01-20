@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col">
-    <app-form-technician></app-form-technician>
+    <app-form-technician (createdTechnician)="onReceiveTechnician($event)"></app-form-technician>
   </div>
   <div class="col">
-    <app-list-technicians></app-list-technicians>
+    <app-list-technicians [technicians]="techniciansArr"></app-list-technicians>
   </div>
 </div>
 

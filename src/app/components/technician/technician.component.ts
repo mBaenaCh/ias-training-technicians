@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TechnicianModel } from 'src/app/shared/models/technician';
 
 @Component({
   selector: 'app-technician',
@@ -7,11 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TechnicianComponent implements OnInit {
 
+  techniciansArr: TechnicianModel[];
+
   // here, you can use for inject dependecys.
   // sintax = constructor(private readonly nameDependency: NameDependency)
-  constructor() { }
+  constructor() { 
+    this.techniciansArr = [];
+  }
 
   ngOnInit(): void {
+  }
+
+  onReceiveTechnician($event): void{
+    this.techniciansArr.push($event);
+    console.log(this.techniciansArr);
   }
 
 }

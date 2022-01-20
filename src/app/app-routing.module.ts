@@ -4,7 +4,7 @@ import { TechnicianComponent } from './components/technician/technician.componen
 
 // here, put all routes that you need use.
 const routes: Routes = [
-  {path: '/', pathMatch: 'full', redirectTo: 'technician'},
+  {path: '', pathMatch: 'full', redirectTo: 'technician'},
   {path: 'technician', component: TechnicianComponent},
   {path: '**', redirectTo: '/'},
 ];
