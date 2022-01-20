@@ -3,7 +3,7 @@
     <app-form-technician (createdTechnician)="onReceiveTechnician($event)"></app-form-technician>
   </div>
   <div class="col">
-    <app-list-technicians [technicians]="techniciansArr"></app-list-technicians>
+    <app-list-technicians [technicians]="techniciansArr" (selectedTechnician)="onReceiveSelectedTechnician($event)"></app-list-technicians>
   </div>
 </div>
 

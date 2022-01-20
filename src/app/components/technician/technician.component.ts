@@ -20,8 +20,13 @@ export class TechnicianComponent implements OnInit {
   }
 
   onReceiveTechnician($event): void{
-    this.techniciansArr.push($event);
-    console.log(this.techniciansArr);
+    //this.techniciansArr.push($event);
+    console.log('Created technician' + $event);
+  }
+
+  onReceiveSelectedTechnician($event): void{
+    //this.techniciansArr = this.techniciansArr.filter(item => item.technicianId!= $event.technicianId);
+    console.log('Deleted technician'+ $event);
   }
 
 }
