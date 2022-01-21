@@ -33,7 +33,7 @@ export class TechnicianService {
   }  
 
   updateById(id: number, technician: TechnicianModel): Promise<TechnicianModel>{
-    /* The technician ID send in the body is ignored by the route because they are inmutable */
+    /* The technicianId send in the body is ignored by the route because that property is inmutable */
     const technicianBody = {
       "name": technician.name,
       "lastName": technician.lastName

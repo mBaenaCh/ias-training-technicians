@@ -6,7 +6,7 @@ import { TechnicianComponent } from './components/technician/technician.componen
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'technician'},
   {path: 'technician', component: TechnicianComponent},
-  {path: '**', redirectTo: '/'},
+  {path: '**', redirectTo: ''},
 ];
 
 @NgModule({
