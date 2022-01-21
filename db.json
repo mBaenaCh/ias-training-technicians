@@ -1,9 +1,9 @@
 {
   "technicians": [
     {
-      "name": "adsasazz",
-      "lastName": "asddasazz",
-      "technicianId": 7
+      "technicianId": 7,
+      "name": "adsasazzasd",
+      "lastName": "dasadsda"
     },
     {
       "name": "adsdasuuuu",
@@ -17,8 +17,18 @@
     },
     {
       "technicianId": 30,
-      "name": "fgete",
-      "lastName": "dvddf"
+      "name": "fgeteqqqq",
+      "lastName": "dvddfqqqq"
+    },
+    {
+      "technicianId": 4,
+      "name": "wreqeeq",
+      "lastName": "tqqeweqq"
+    },
+    {
+      "technicianId": 3,
+      "name": "sdaeqwddasd",
+      "lastName": "wdqdqdasdasd"
     }
   ]
 }
