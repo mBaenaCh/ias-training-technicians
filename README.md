@@ -26,6 +26,20 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Running the Fake REST API
+
+For this excercise i've just mocked a fake REST API with the `json-server` dependency in order to test the app services with the `HTTP Client Module`.
+
+The fake *database* can be found in the `db.json` file and to run the fake API run the command:
+
+```cli
+$ json-server --id technicianId db.json
+```
+
+The flag `--id` suits our need to call our inmutable property as `technicianId`. The fake API runs on the port `3000` by default. 
+
+For more info about this dependency just go to the [npm page](https://www.npmjs.com/package/json-server).
+
 ## -------------------------- IAS training Requirements  -  Angular technician  
  - Create a frontend for a Technician (CRUD), use components already created.
     form fields:
