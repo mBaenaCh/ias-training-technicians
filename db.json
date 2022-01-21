@@ -1,19 +1,24 @@
 {
-    "technicians": [
-        {
-            "technicianId": "U0089",
-            "name": "technician A",
-            "lastName": "technician A1"
-        },
-        {
-            "technicianId": "U0090",
-            "name": "technician B",
-            "lastName": "technician B2"
-        },
-        {
-            "technicianId": "U0091",
-            "name": "technician C",
-            "lastName": "technician C3"
-        }
-    ]
+  "technicians": [
+    {
+      "name": "adsasazz",
+      "lastName": "asddasazz",
+      "technicianId": 7
+    },
+    {
+      "technicianId": 23,
+      "name": "adsdas",
+      "lastName": "sdfsas"
+    },
+    {
+      "technicianId": 49,
+      "name": "dsa",
+      "lastName": "dsadas"
+    },
+    {
+      "technicianId": 30,
+      "name": "fgete",
+      "lastName": "dvddf"
+    }
+  ]
 }

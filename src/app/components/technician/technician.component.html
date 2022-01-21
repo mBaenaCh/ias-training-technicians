@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col">
-    <app-form-technician (createdTechnician)="onReceiveTechnician($event)"></app-form-technician>
+    <app-form-technician (createdTechnician)="onReceiveTechnician($event)" [toEdit]="technicianToEdit"></app-form-technician>
   </div>
   <div class="col">
-    <app-list-technicians [technicians]="techniciansArr" (selectedTechnician)="onReceiveSelectedTechnician($event)"></app-list-technicians>
+    <app-list-technicians 
+        (selectedTechnicianDelete)="onReceiveSelectedTechnicianDelete($event)" [technicians]="techniciansArr" (selectedTechnicianEdit)="onReceiveSelectedTechnicianEdit($event)"></app-list-technicians>
   </div>
 </div>
-
