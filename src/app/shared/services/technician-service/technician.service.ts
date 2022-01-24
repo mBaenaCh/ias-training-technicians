@@ -15,7 +15,7 @@ export class TechnicianService {
     this.baseUrl = 'http://localhost:3000/technicians';
   }
 
-  createTechnician(technician: TechnicianModel): Promise<TechnicianModel> {
+  create(technician: TechnicianModel): Promise<TechnicianModel> {
     const technicianBody = {
       "technicianId": technician.technicianId,
       "name": technician.name,

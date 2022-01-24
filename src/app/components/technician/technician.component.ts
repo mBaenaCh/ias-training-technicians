@@ -31,7 +31,7 @@ export class TechnicianComponent implements OnInit {
       await this.technicianService.updateById($event.technicianId, $event);
       this.techniciansArr = await this.technicianService.getAll();
     } else { //The technician was a new one so we create an instance of it in the API
-    await this.technicianService.createTechnician($event);
+    await this.technicianService.create($event);
     this.techniciansArr = await this.technicianService.getAll();
     }
   }
