@@ -24,18 +24,24 @@ export class TechnicianComponent implements OnInit {
 
   async onReceiveTechnician($event) {
 
-    /* Must know if the technician already exists */
+    /* Must know if the technician already exists 
+       Ive prefered this way in order to avoid an extra request (the get by id)*/
     const foundTechnician = this.techniciansArr.find(item => item.technicianId === $event.technicianId);
-    
+
     if (foundTechnician != undefined) { //The technician was already created so we just update it (Based on an inmutable technicianId, which is the case)
-      await this.technicianService.updateById($event.technicianId, $event);
+
+      await this.technicianService
+        .updateById($event.technicianId, $event)
+        .catch((error) => {
+          console.log(error);
+        });
+
       this.techniciansArr = await this.technicianService.getAll();
     } else { //The technician was a new one so we create an instance of it in the API
-    await this.technicianService.create($event);
-    this.techniciansArr = await this.technicianService.getAll();
+      await this.technicianService.create($event);
+      this.techniciansArr = await this.technicianService.getAll();
     }
   }
-
 
   async onReceiveSelectedTechnicianDelete($event) {
     await this.technicianService.deleteById($event.technicianId);
