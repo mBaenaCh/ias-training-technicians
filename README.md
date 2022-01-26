@@ -40,6 +40,10 @@ The flag `--id` suits our need to call our inmutable property as `technicianId`.
 
 For more info about this dependency just go to the [npm page](https://www.npmjs.com/package/json-server).
 
+## Proposed solution
+
+![Components diagram](https://github.com/mBaenaCh/ias-training-technicians/blob/feature/mateo-baena/src/assets/ias-front-angular.drawio.png)
+
 ## -------------------------- IAS training Requirements  -  Angular technician  
  - Create a frontend for a Technician (CRUD), use components already created.
     form fields:
