@@ -14,6 +14,11 @@
       "technicianId": 11,
       "name": "dont use ",
       "lastName": "promises again"
+    },
+    {
+      "technicianId": 10,
+      "name": "Mateo",
+      "lastName": "Baena Ch"
     }
   ]
 }
