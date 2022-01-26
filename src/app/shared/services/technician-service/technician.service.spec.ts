@@ -22,21 +22,9 @@ describe('TechnicianService', () => {
 
   it('should return the list of technicians', () => {
     const expectedTechnicians: TechnicianModel[] = [
-      {
-        technicianId: 9,
-        name: "asdqeqeditado",
-        lastName: "adsadsqqqqqeditado"
-      },
-      {
-        technicianId: 12,
-        name: "el editado",
-        lastName: "quedo editado"
-      },
-      {
-        technicianId: 11,
-        name: "dont use ",
-        lastName: "promises again"
-      }
+      { technicianId: 9, name: "asdqeqeditado", lastName: "adsadsqqqqqeditado" },
+      { technicianId: 12, name: "el editado", lastName: "quedo editado" },
+      { technicianId: 11, name: "dont use ", lastName: "promises again" }
     ];
 
     technicianService.getAll().subscribe((data) => {
