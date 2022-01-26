@@ -18,34 +18,40 @@ export class TechnicianComponent implements OnInit {
     this.techniciansArr = [];
   }
 
-  async ngOnInit() {
-    this.techniciansArr = await this.technicianService.getAll();
+  ngOnInit() {
+    this.technicianService.getAll().subscribe((data) => {
+      this.techniciansArr = data;
+    });
   }
 
-  async onReceiveTechnician($event) {
+  onReceiveTechnician($event) {
 
     /* Must know if the technician already exists 
-       Ive prefered this way in order to avoid an extra request (the get by id)*/
+       Ive prefered this approach in order to avoid an extra request (the "get by id")*/
     const foundTechnician = this.techniciansArr.find(item => item.technicianId === $event.technicianId);
 
     if (foundTechnician != undefined) { //The technician was already created so we just update it (Based on an inmutable technicianId, which is the case)
 
-      await this.technicianService
-        .updateById($event.technicianId, $event)
-        .catch((error) => {
-          console.log(error);
-        });
-
-      this.techniciansArr = await this.technicianService.getAll();
+      this.technicianService.updateById($event.technicianId, $event).subscribe((data)=>{
+        this.technicianService.getAll().subscribe((data) => {
+          this.techniciansArr = data;
+        });  
+      });  
     } else { //The technician was a new one so we create an instance of it in the API
-      await this.technicianService.create($event);
-      this.techniciansArr = await this.technicianService.getAll();
-    }
+      this.technicianService.create($event).subscribe((data)=>{
+        this.technicianService.getAll().subscribe((data) => {
+          this.techniciansArr = data;
+        });
+      });
+    } 
   }
 
-  async onReceiveSelectedTechnicianDelete($event) {
-    await this.technicianService.deleteById($event.technicianId);
-    this.techniciansArr = await this.technicianService.getAll();
+  onReceiveSelectedTechnicianDelete($event) {
+    this.technicianService.deleteById($event.technicianId).subscribe((data)=> {
+      this.technicianService.getAll().subscribe((data) => {
+        this.techniciansArr = data;
+      });
+    }); 
   }
 
   onReceiveSelectedTechnicianEdit($event) {

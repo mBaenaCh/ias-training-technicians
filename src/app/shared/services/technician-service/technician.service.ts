@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { TechnicianModel } from '../../models/technician';
 // here, put all methods that you need for provide technician
 // like create, update, query or delete.
@@ -15,35 +16,35 @@ export class TechnicianService {
     this.baseUrl = 'http://localhost:3000/technicians';
   }
 
-  create(technician: TechnicianModel): Promise<TechnicianModel> {
+  create(technician: TechnicianModel): Observable<TechnicianModel> {
     const technicianBody = {
       "technicianId": technician.technicianId,
       "name": technician.name,
       "lastName": technician.lastName
     }
-    return this.http.post<TechnicianModel>(this.baseUrl, technicianBody ).toPromise();
+    return this.http.post<TechnicianModel>(this.baseUrl, technicianBody);
   }
 
-  getAll(): Promise<TechnicianModel[]> {
-    return this.http.get<TechnicianModel[]>(this.baseUrl).toPromise();
+  getAll(): Observable<TechnicianModel[]> {
+    return this.http.get<TechnicianModel[]>(this.baseUrl);
   }
 
-  getById(id: number): Promise<TechnicianModel>{
-    return this.http.get<TechnicianModel>(`${this.baseUrl}/${id}`).toPromise();
+  getById(id: number): Observable<TechnicianModel>{
+    return this.http.get<TechnicianModel>(`${this.baseUrl}/${id}`);
   }  
 
-  updateById(id: number, technician: TechnicianModel): Promise<TechnicianModel>{
+  updateById(id: number, technician: TechnicianModel): Observable<TechnicianModel>{
     /* The technicianId send in the body is ignored by the route because that property is inmutable */
     const technicianBody = {
       "technicianId": technician.technicianId,
       "name": technician.name,
       "lastName": technician.lastName
     }
-    return this.http.put<TechnicianModel>(`${this.baseUrl}/${id}`, technicianBody).toPromise();
+    return this.http.put<TechnicianModel>(`${this.baseUrl}/${id}`, technicianBody);
     
   }
 
-  deleteById(id: number): Promise<TechnicianModel>{
-    return this.http.delete<TechnicianModel>(`${this.baseUrl}/${id}`).toPromise();
+  deleteById(id: number): Observable<TechnicianModel>{
+    return this.http.delete<TechnicianModel>(`${this.baseUrl}/${id}`);
   }
 }
